@@ -2,9 +2,155 @@ process {
     Id = "deploymentprocess-Projects-2"
     OwnerId = "Projects-2"
     IsFrozen = false
-    Version = 0
+    Version = 1
     SpaceId = "Spaces-1"
     Steps {
+        hello_world_(using_powershell) {
+            Id = "b23d05ef-c278-4fe4-82e0-ccc8fd73d42a"
+            Name = "Hello world (using PowerShell)"
+            Condition = "Success"
+            StartTrigger = "StartAfterPrevious"
+            PackageRequirement = "LetOctopusDecide"
+            Actions {
+                hello_world_(using_powershell) {
+                    Id = "263c9521-f544-445a-959b-3128d58d7106"
+                    Name = "Hello world (using PowerShell)"
+                    ActionType = "Octopus.Script"
+                    Container {
+                    }
+                    IsDisabled = false
+                    IsRequired = true
+                    Environments = []
+                    ExcludedEnvironments = []
+                    Channels = []
+                    TenantTags = []
+                    Packages {
+                    }
+                    Condition = "Success"
+                    Properties {
+                        octopus.action.script.scriptsource {
+                            Key = "Octopus.Action.Script.ScriptSource"
+                            Value {
+                                Value = "Inline"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.script.scriptbody {
+                            Key = "Octopus.Action.Script.ScriptBody"
+                            Value {
+                                Value = "Write-Host 'Hello world, using PowerShell'
+
+#TODO: Experiment with steps of your own :)
+
+Write-Host '[Learn more about the types of steps available in Octopus](https://g.octopushq.com/OnboardingAddStepsLearnMore)'"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.script.syntax {
+                            Key = "Octopus.Action.Script.Syntax"
+                            Value {
+                                Value = "PowerShell"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.runonserver {
+                            Key = "Octopus.Action.RunOnServer"
+                            Value {
+                                Value = "true"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                    }
+                }
+            }
+            Properties {
+                octopus.action.runonserver {
+                    Key = "Octopus.Action.RunOnServer"
+                    Value {
+                        Value = "true"
+                        IsSensitive = false
+                        HasValue = true
+                    }
+                }
+            }
+        }
+        hello_world_(using_c#) {
+            Id = "02422613-06c5-4e27-841e-f91647062f13"
+            Name = "Hello World (using C#)"
+            Condition = "Success"
+            StartTrigger = "StartWithPrevious"
+            PackageRequirement = "LetOctopusDecide"
+            Actions {
+                hello_world_(using_c#) {
+                    Id = "6afc31a4-dceb-43ca-a468-76d7e3c38ba9"
+                    Name = "Hello World (using C#)"
+                    ActionType = "Octopus.Script"
+                    Container {
+                    }
+                    IsDisabled = false
+                    IsRequired = true
+                    Environments = []
+                    ExcludedEnvironments = []
+                    Channels = []
+                    TenantTags = []
+                    Packages {
+                    }
+                    Condition = "Success"
+                    Properties {
+                        octopus.action.script.scriptsource {
+                            Key = "Octopus.Action.Script.ScriptSource"
+                            Value {
+                                Value = "Inline"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.script.scriptbody {
+                            Key = "Octopus.Action.Script.ScriptBody"
+                            Value {
+                                Value = "Console.WriteLine("Hello world, using C#");
+
+//TODO: Experiment with steps of your own :)
+
+Console.WriteLine("[Learn more about the types of steps available in Octopus](https://g.octopushq.com/OnboardingAddStepsLearnMore)");"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.script.syntax {
+                            Key = "Octopus.Action.Script.Syntax"
+                            Value {
+                                Value = "CSharp"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                        octopus.action.runonserver {
+                            Key = "Octopus.Action.RunOnServer"
+                            Value {
+                                Value = "true"
+                                IsSensitive = false
+                                HasValue = true
+                            }
+                        }
+                    }
+                }
+            }
+            Properties {
+                octopus.action.runonserver {
+                    Key = "Octopus.Action.RunOnServer"
+                    Value {
+                        Value = "true"
+                        IsSensitive = false
+                        HasValue = true
+                    }
+                }
+            }
+        }
     }
     RelatedDocumentIds = []
 }
