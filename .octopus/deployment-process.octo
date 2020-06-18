@@ -1,19 +1,19 @@
 process {
-    Id = "deploymentprocess-Projects-2"
-    OwnerId = "Projects-2"
+    Id = "deploymentprocess-Projects-3"
+    OwnerId = "Projects-3"
     IsFrozen = false
     Version = 1
     SpaceId = "Spaces-1"
     Steps {
         hello_world_(using_powershell) {
-            Id = "b23d05ef-c278-4fe4-82e0-ccc8fd73d42a"
+            Id = "68a4a245-57d2-4636-9026-3fcf258493ea"
             Name = "Hello world (using PowerShell)"
             Condition = "Success"
             StartTrigger = "StartAfterPrevious"
             PackageRequirement = "LetOctopusDecide"
             Actions {
                 hello_world_(using_powershell) {
-                    Id = "263c9521-f544-445a-959b-3128d58d7106"
+                    Id = "5eeb1ed7-e0c3-4cba-8799-900ba970d83a"
                     Name = "Hello world (using PowerShell)"
                     ActionType = "Octopus.Script"
                     Container {
@@ -79,14 +79,14 @@ Write-Host '[Learn more about the types of steps available in Octopus](https://g
             }
         }
         hello_world_(using_c#) {
-            Id = "02422613-06c5-4e27-841e-f91647062f13"
+            Id = "ede2fe89-5e24-463f-83ab-539c44bace1e"
             Name = "Hello World (using C#)"
             Condition = "Success"
             StartTrigger = "StartWithPrevious"
             PackageRequirement = "LetOctopusDecide"
             Actions {
                 hello_world_(using_c#) {
-                    Id = "6afc31a4-dceb-43ca-a468-76d7e3c38ba9"
+                    Id = "dab93e33-fbd2-4ca1-8c1b-271c8c7207bb"
                     Name = "Hello World (using C#)"
                     ActionType = "Octopus.Script"
                     Container {
